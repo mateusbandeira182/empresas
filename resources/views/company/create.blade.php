@@ -1,4 +1,4 @@
-<x-app-layout :message="!is_null($message) ? $message : ''" :type="!is_null($type) ? $type : ''">
+<x-app-layout :message="!is_null($message) ? $message : null" :type="!is_null($type) ? $type : null">
     <div class="row justify-content-center mt-5">
         <div class="col-sm-12 col-md-6 col-lg-5">
             <x-card-bootstrap5>

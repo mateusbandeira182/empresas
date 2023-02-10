@@ -4,6 +4,7 @@ namespace App\Repositories\Comany\Implementations;
 
 use App\Http\Requests\CompanyRegisterRequest;
 use App\Models\Company;
+use App\Models\User;
 use App\Repositories\Comany\CompanyRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -52,4 +53,15 @@ class EnlouquentCompanyRepository implements CompanyRepositoryInterface
         });
     }
 
+    public function deleteCompaniesByOwner(User $user): int
+    {
+        return DB::transaction(fn() => Company::where('user_id', $user->id)->delete());
+    }
+
+    public function getCompany(Company $company)
+    {
+        return DB::transaction(function() use ($company) {
+            return Company::where('id', $company->id)->with('user')->get();
+        });
+    }
 }

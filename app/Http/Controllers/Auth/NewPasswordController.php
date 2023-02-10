@@ -19,7 +19,9 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request): View
     {
-        return view('auth.reset-password', ['request' => $request]);
+        $message = session('message');
+        $type = session('type');
+        return view('auth.reset-password', ['request' => $request])->with('message', $message)->with('type', $type);
     }
 
     /**

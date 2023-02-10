@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Repositories\Comany\CompanyRepositoryInterface;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,14 +12,21 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    public function __construct(
+        private CompanyRepositoryInterface $companyRepository
+    )
+    {}
+
     /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View
     {
+        $message = session('message');
+        $type = session('type');
         return view('profile.edit', [
             'user' => $request->user(),
-        ]);
+        ])->with('message', $message)->with('type', $type);
     }
 
     /**
@@ -45,16 +53,12 @@ class ProfileController extends Controller
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current-password'],
         ]);
-
         $user = $request->user();
-
         Auth::logout();
-
+        $this->companyRepository->deleteCompaniesByOwner($user);
         $user->delete();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return Redirect::to('/');
     }
 }

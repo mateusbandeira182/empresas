@@ -1,4 +1,4 @@
-<x-app-layout :message="!is_null($message) ? $message : ''" :type="!is_null($type) ? $type : ''">
+<x-app-layout :message="!is_null($message) ? $message : null" :type="!is_null($type) ? $type : null">
     <div class="row mt-5">
         <div class="col-12">
             @if(count($companies) != 0)

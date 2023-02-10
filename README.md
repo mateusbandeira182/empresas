@@ -1,66 +1,76 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Sobre o Projeto
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O projeto foi desenvolvido usando as seguintes tecnologias:
 
-## About Laravel
+- [PHP (8.2.2)](https://www.php.net/downloads.php).
+- [Composer (2.5.3)](https://getcomposer.org/).
+- [Laravel (9.51.0)](https://laravel.com/).
+- [Nodejs (18.14.0)](https://nodejs.org/en/).
+- [SQLite](https://www.sqlite.org/index.html).
+- [Jquery (3.6.3)](https://jquery.com/).
+- [Bootstrap (5.3.0)](https://getbootstrap.com/).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## O Projeto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O projeto consiste em um sistema de cadastro de usuários e empresas.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Especificações:
+- Tela de login;
+- Tela de cadastro de usuário;
+- Tela de edição de cadastro;
+- Tela de cadastro de empresa;
+- Tela de edição de empresa;
+- Exlusão de cadastro de usuário;
+- Exclusão de empresa;
+- Consulta de empresas via API usando como chave seu ID.
 
-## Learning Laravel
+Todos os modelos usam como ID UUID;
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalando o Projeto
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Para instalar o projeto você deve seguir os passos abaixo.
+As configurações do projeto já estão estabeleciadas no arquivo `.env.example`.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Clonar este projeto em algum diretório de sua preferência, usando o `git clone`;
+- Abrir um terminal do sistema operacional e navegar até a pasta do projeto;
+- Executar o comando `composer install`, ele irá baixar e instalar todas as dependencias do projeto;
+- Fazer uma cópia do arquivo `.env.example` no mesmo diretorio alterando o nome do arquivo para `.env`;
+- Voltando ao terminal digite o comando `npm install` e precione ENTER, para instalar todas as dependencias de front-end;
+- Digite o comando `npm run dev`, para compilar os arquivos necessários ao front-end;
+- Digite o comando `php artisan key:generate`, para renovar as chaves do Laravel;
+- Digite o comando `php artisan migrate`, para realizar as migrações e criar a base de dados, no momento da execução o terminal vai questinar se precisa ou não criar o banco de dados, digite `yes` para criar o banco de dados;
+- Digite o comando `php artisan serve`, um servidor PHP será iniciado no caminho: 'http://localhost:8000', abrindo a página inicial do Projeto;
 
-## Laravel Sponsors
+### Caminhos do projeto
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+A tela inicial do projeto é a tela de login e na parte superior esquerdo tem o link que direciona para o fomulário de cadastro de usuários.
 
-### Premium Partners
+Ao finalizar o cadastro do usuário, você será logado automaticamente no sistema.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Ao clicar no menu sanduishe, você vera todas as funcionalidades.
 
-## Contributing
+- Página inicial: Mais um link que direciona para a página inicial;
+- Cadastro de empresa: Onde é informado os dados da empresa;
+- Perfil de usuário: Onde pode fazer alteração dos dados do usuário;
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Pagina Inicial
 
-## Code of Conduct
+A página inicial tem duas tabelas: uma de Empresas cadastradas e outra de usuários cadastrados.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Na tabela de empresas, tem uma coluna com as ações disponiveis, são elas:
 
-## Security Vulnerabilities
+- Editar uma empresa;
+- Excluir uma empresa;
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Perfil
+Na página do perfil, você pode alterar dados como nome, e e-mail, fazer a troca da senha do usuário e fazer a exclusão do perfil.
+Na exclusão do perfil, junto ao usuário, todas as empresas que tenham esse usuário como dono serão excluidas da base.
 
-## License
+### Consulta empresa API
+Para realizar a consulta via API da empresa, o end-point para a consulta é a url base, geralmente `http://localhost:8000/`, concatenado com a rota `api/companies/{idEmpresa}`;
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+A resposta será um json com os dados da empresa, e do seu dono.
+
+## Contato
+
+Qualquer dúvida pode entrar em contato que todas as dúvidas serão sanadas

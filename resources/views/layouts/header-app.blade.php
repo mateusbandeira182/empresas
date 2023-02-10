@@ -7,7 +7,7 @@
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="appNavbar" aria-labelledby="appNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="appNavbarLabel">Estoque de alimentos</h5>
+                    <h5 class="offcanvas-title" id="appNavbarLabel">Empresas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -18,24 +18,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('company.create') }}">Cadastrar empresa</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a href="{{ route('profile.edit') }}" class="nav-link">Perfil</a>
                         </li>
                     </ul>
                     <hr>
                     <form method="post" action="{{ route('logout') }}">
                         @csrf
-                        <button class="nav-link">Logout</button>
+                        <button class="btn btn-primary btn-sm">Logout</button>
                     </form>
                 </div>
             </div>

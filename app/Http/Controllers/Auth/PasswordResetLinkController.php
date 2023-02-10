@@ -15,7 +15,9 @@ class PasswordResetLinkController extends Controller
      */
     public function create(): View
     {
-        return view('auth.forgot-password');
+        $message = session('message');
+        $type = session('type');
+        return view('auth.forgot-password')->with('message', $message)->with('type', $type);
     }
 
     /**

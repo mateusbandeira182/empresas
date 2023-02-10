@@ -17,7 +17,9 @@ class ConfirmablePasswordController extends Controller
      */
     public function show(): View
     {
-        return view('auth.confirm-password');
+        $message = session('message');
+        $type = session('type');
+        return view('auth.confirm-password')->with('message', $message)->with('type', $type);
     }
 
     /**
