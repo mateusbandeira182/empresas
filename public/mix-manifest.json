@@ -1,4 +1,8 @@
 {
     "/assets/js/app.js": "/assets/js/app.js",
-    "/assets/css/styles.css": "/assets/css/styles.css"
+    "/assets/js/company/company.js": "/assets/js/company/company.js",
+    "/assets/js/user/user.js": "/assets/js/user/user.js",
+    "/assets/js/user/panel.js": "/assets/js/user/panel.js",
+    "/assets/css/styles.css": "/assets/css/styles.css",
+    "/assets/plugins/jquery-mask-plugin/jquery.mask.min.js": "/assets/plugins/jquery-mask-plugin/jquery.mask.min.js"
 }

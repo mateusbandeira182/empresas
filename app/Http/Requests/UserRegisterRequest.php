@@ -26,7 +26,7 @@ class UserRegisterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:100'],
-            'cpf' => ['required', 'integer', 'digits:11'],
+            'cpf' => ['required', 'numeric', 'digits:11', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => ['required', 'confirmed', Password::min(8)
                 ->letters()

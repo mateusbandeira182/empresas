@@ -11,7 +11,7 @@
 </head>
 <body class="h-100 bg-light">
 @include('layouts.header-app')
-<main id="main" class="h-100 d-flex align-items-center m-auto">
+<main id="main">
     <div class="container">
         @isset($message)
             <x-alert-bootstrap5 :message="$message" :type="$type"/>
@@ -21,4 +21,6 @@
 </main>
 </body>
 <script src="{{ asset('assets/js/app.js') }}"></script>
+@stack('plugins-scripts')
+@stack('custom-scripts')
 </html>

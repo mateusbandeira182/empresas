@@ -34,4 +34,6 @@
 </main>
 </body>
 <script src="{{ asset('assets/js/app.js') }}"></script>
+@stack('plugins-scripts')
+@stack('custom-scripts')
 </html>

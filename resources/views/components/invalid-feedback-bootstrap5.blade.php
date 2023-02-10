@@ -1,6 +1,6 @@
 @props(['messages'])
 @if($messages)
-    <div class="invalid-feedback">
+    <div class="is-invalid invalid-feedback">
         <ul>
             @foreach($messages as $message)
                 <li>{{ $message }}</li>

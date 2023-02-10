@@ -1,7 +1,7 @@
 <header>
-    <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Estoque de alimentos</a>
+            <a class="navbar-brand" @auth href="{{ route('user.panel') }}" @endauth>Empresas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#appNavbar" aria-controls="appNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,10 +13,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="{{ config('app.host') }}">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="{{ route('company.create') }}">Cadastrar empresa</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,6 +32,11 @@
                             </ul>
                         </li>
                     </ul>
+                    <hr>
+                    <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="nav-link">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>

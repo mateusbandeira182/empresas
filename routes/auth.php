@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Model\CompanyController;
+use App\Http\Controllers\User\PanelController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -56,4 +58,18 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+    Route::get('panel', [PanelController::class, 'index'])->name('user.panel');
+
+    Route::get('companies', [CompanyController::class, 'index'])->name('company.index');
+
+    Route::get('companies/create', [CompanyController::class, 'create'])->name('company.create');
+
+    Route::post('companies', [CompanyController::class, 'store'])->name('company.store');
+
+    Route::get('companies/{company}/edit', [CompanyController::class, 'edit'])->name('company.edit');
+
+    Route::put('companies/{company}', [CompanyController::class, 'update'])->name('company.update');
+
+    Route::delete('companies/{company}', [CompanyController::class, 'destroy'])->name('company.destroy');
 });

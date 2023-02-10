@@ -197,6 +197,8 @@ return [
 
         App\Providers\UserRepositoryProvider::class,
 
+        App\Providers\CompanyRepositoryProvider::class,
+
     ],
 
     /*
